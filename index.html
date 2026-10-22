@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>বৃত্তি পরীক্ষা ২০২৬ – MCQ অনুশীলন (সেট ৩ – চ্যালেঞ্জ ১২০)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f6fb; --card:#ffffff; --ink:#1d2433; --muted:#5b6578; --line:#d9e0ec;
+  --brand:#1f5fbf; --brand-soft:#e6efff;
+  --ok:#157a3d; --ok-bg:#e3f6ea; --bad:#b42318; --bad-bg:#fde8e6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"SutonnyMJ","Noto Sans Bengali","Kalpurush","SolaimanLipi","Siyam Rupali","Nirmala UI",Vrinda,sans-serif;
+  font-size:17px; line-height:1.65;
+}
+header{background:var(--brand); color:#fff; padding:18px 14px 14px; text-align:center}
+header h1{margin:0; font-size:21px; font-weight:700}
+header p{margin:4px 0 0; font-size:14px; opacity:.9}
+.wrap{max-width:820px; margin:0 auto; padding:0 12px 60px}
+.tabs{display:flex; gap:8px; overflow-x:auto; padding:12px 2px; -webkit-overflow-scrolling:touch}
+.tab{
+  flex:0 0 auto; border:1.5px solid var(--line); background:#fff; color:var(--ink);
+  padding:7px 14px; border-radius:999px; font:inherit; font-size:15px; cursor:pointer; white-space:nowrap;
+}
+.tab.active{background:var(--brand); border-color:var(--brand); color:#fff; font-weight:600}
+.bar{
+  position:sticky; top:0; z-index:5; background:var(--card); border:1px solid var(--line);
+  border-radius:12px; padding:10px 14px; margin:4px 0 14px; box-shadow:0 2px 8px rgba(20,40,80,.07);
+}
+.stats{display:flex; flex-wrap:wrap; gap:6px 16px; font-size:15px; justify-content:space-between}
+.stats b{font-weight:700}
+.ok-t{color:var(--ok)} .bad-t{color:var(--bad)}
+.prog{height:7px; background:var(--line); border-radius:9px; margin-top:8px; overflow:hidden}
+.prog>i{display:block; height:100%; width:0; background:var(--brand); transition:width .25s}
+.q{
+  background:var(--card); border:1px solid var(--line); border-radius:14px;
+  padding:14px 14px 12px; margin-bottom:14px;
+}
+.q .meta{font-size:13px; color:var(--muted); margin-bottom:4px}
+.q .text{font-weight:600; margin-bottom:10px}
+.q .text span.n{color:var(--brand); margin-right:4px}
+.opt{
+  display:flex; gap:10px; align-items:flex-start; width:100%; text-align:left;
+  border:1.5px solid var(--line); background:#fff; color:var(--ink);
+  border-radius:10px; padding:9px 12px; margin:7px 0; font:inherit; cursor:pointer;
+}
+.opt:hover:not(:disabled){border-color:var(--brand); background:var(--brand-soft)}
+.opt .lab{
+  flex:0 0 28px; height:28px; border-radius:50%; background:var(--brand-soft); color:var(--brand);
+  display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; margin-top:1px;
+}
+.opt:disabled{cursor:default}
+.opt.correct{background:var(--ok-bg); border-color:var(--ok); color:#0e5a2b}
+.opt.correct .lab{background:var(--ok); color:#fff}
+.opt.wrong{background:var(--bad-bg); border-color:var(--bad); color:#7a160d}
+.opt.wrong .lab{background:var(--bad); color:#fff}
+.fb{margin-top:8px; padding:9px 12px; border-radius:10px; font-size:15.5px; display:none}
+.fb.show{display:block}
+.fb.good{background:var(--ok-bg); color:#0e5a2b}
+.fb.err{background:var(--bad-bg); color:#7a160d}
+.fb .ex{display:block; margin-top:3px; color:var(--muted); font-size:14.5px}
+.result{
+  background:var(--card); border:2px solid var(--brand); border-radius:14px; padding:18px; text-align:center;
+  margin:8px 0 18px; display:none;
+}
+.result.show{display:block}
+.result .big{font-size:34px; font-weight:700; color:var(--brand)}
+.btns{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:10px}
+.btn{
+  border:0; background:var(--brand); color:#fff; padding:9px 18px; border-radius:10px;
+  font:inherit; font-size:15.5px; cursor:pointer;
+}
+.btn.alt{background:#fff; color:var(--brand); border:1.5px solid var(--brand)}
+footer{text-align:center; color:var(--muted); font-size:13.5px; padding:6px 10px 30px}
+</style>
+</head>
+<body>
+<header>
+  <h1>বৃত্তি পরীক্ষা ২০২৬ – পঞ্চম শ্রেণি (সেট ৩)</h1>
+  <p>চ্যালেঞ্জ সেট · ১২০টি কঠিন MCQ · ভেবে সঠিক উত্তর বাছাই করো</p>
+</header>
+
+<div class="wrap">
+  <div class="tabs" id="tabs"></div>
+
+  <div class="bar">
+    <div class="stats">
+      <span>উত্তর দিয়েছ: <b id="sAns">০</b>/<b id="sTot">০</b></span>
+      <span class="ok-t">সঠিক: <b id="sOk">০</b></span>
+      <span class="bad-t">ভুল: <b id="sBad">০</b></span>
+    </div>
+    <div class="prog"><i id="prog"></i></div>
+  </div>
+
+  <div class="result" id="result">
+    <div>তোমার ফলাফল</div>
+    <div class="big" id="rScore"></div>
+    <div id="rMsg"></div>
+    <div class="btns">
+      <button class="btn" id="btnRetry">আবার চেষ্টা করো</button>
+      <button class="btn alt" id="btnTop">উপরে যাও</button>
+    </div>
+  </div>
+
+  <div id="list"></div>
+
+  <div class="btns" style="margin-top:6px">
+    <button class="btn alt" id="btnReset">এই অংশ নতুন করে শুরু করো</button>
+  </div>
+</div>
+<footer>পঞ্চম শ্রেণির মূল বই ও বৃত্তি পরীক্ষা ২০২৬ সিলেবাস অনুযায়ী তৈরি</footer>
+
+<script>
+/* ---------- প্রশ্নভান্ডার ----------
+   প্রতিটি প্রশ্ন: [বিষয়, অধ্যায়/টপিক, প্রশ্ন, [সঠিক উত্তর, ভুল১, ভুল২, ভুল৩], ব্যাখ্যা]
+   সঠিক উত্তর সবসময় প্রথমে লেখা; পাতা খোলার সময় অপশনগুলো এলোমেলো হয়ে যায়। */
+const RAW = [
+/* ===== বাংলা গদ্য ৮ ===== */
+["bn","গদ্য · বিদায় হজের ভাষণ","বিদায় হজের ভাষণের বক্তব্যের সাথে নিচের কোন বাক্যটি মেলে?",["অন্য ধর্মের মানুষের ওপর নিজের ধর্ম চাপিয়ে দেওয়া যাবে না","ধর্ম নিয়ে যত বেশি বাড়াবাড়ি করা যায়, ততই ভালো","কোনো গোলাম নিজের যোগ্যতায় আমির হলেও তাকে মানা যাবে না","সামান্য পাপ করলে তার জন্য জবাবদিহি করতে হবে না"],"মহানবি (স) বলেছেন—নিজ নিজ ধর্ম পালন করবে, অন্য ধর্মের মানুষের উপর নিজের ধর্ম চাপিয়ে দেবে না। বাকি তিনটি তাঁর কথার উল্টো।"],
+["bn","গদ্য · বিদায় হজের ভাষণ","‘আজ যারা এখানে আসেনি, আমার উপদেশ তাদের কাছে পৌঁছে দিয়ো’—এ অনুরোধ থেকে মহানবির (স) কোন মনোভাব সবচেয়ে ভালোভাবে বোঝা যায়?",["তাঁর উপদেশ সব মানুষের কাছে ছড়িয়ে দেওয়ার আন্তরিক ইচ্ছা","উপদেশ শুধু উপস্থিত লোকদের মধ্যে সীমাবদ্ধ রাখার ইচ্ছা","ভাষণ নিয়ে অসন্তোষ","হজ বন্ধ করে দেওয়ার ইচ্ছা"],"যারা আসেনি তাদের কাছেও উপদেশ পৌঁছে দিতে বলায় বোঝা যায়, তিনি তা সবার কাছে ছড়িয়ে দিতে চেয়েছিলেন।"],
+["bn","গদ্য · মাটির নিচে পুরনো নগর","উয়ারী-বটেশ্বর অঞ্চল যে খুবই সমৃদ্ধ ছিল, তা সবচেয়ে ভালোভাবে বোঝা যায় কোন তথ্য থেকে?",["ব্রহ্মপুত্রের নদীপথ ও সমুদ্রপথে রোমান সাম্রাজ্যের সাথে যোগাযোগ, পাশাপাশি রৌপ্যমুদ্রা ও বন্দরের নিদর্শন","এলাকাটি নরসিংদী জেলায় অবস্থিত","সেখানে শ্রমিকরা মাটি কাটতেন","স্কুলশিক্ষক হানিফ পাঠান মুদ্রা সংগ্রহ করেছিলেন"],"দূরদেশের সাথে বাণিজ্য এবং মুদ্রা, বন্দর, দুর্গ-প্রাচীরের মতো নিদর্শন সমৃদ্ধির প্রমাণ। বাকি তথ্যগুলো সমৃদ্ধি প্রমাণ করে না।"],
+["bn","গদ্য · মাটির নিচে পুরনো নগর","পাঠে উল্লিখিত তিনটি নগরকে প্রাচীন থেকে নবীন ক্রমে সাজালে কোনটি সঠিক?",["উয়ারী-বটেশ্বর → মহাস্থানগড় → ময়নামতি","মহাস্থানগড় → উয়ারী-বটেশ্বর → ময়নামতি","ময়নামতি → মহাস্থানগড় → উয়ারী-বটেশ্বর","ময়নামতি → উয়ারী-বটেশ্বর → মহাস্থানগড়"],"উয়ারী-বটেশ্বর (খ্রিষ্টপূর্ব ছয়-সাত শতক), মহাস্থানগড় (তৃতীয় শতকের পরে), ময়নামতি (সাত-আট শতক)।"],
+["bn","গদ্য · আমরা তোমাদের ভুলব না","পাঠে বর্ণিত ঘটনাগুলোকে সময়ের ক্রমে (আগে থেকে পরে) সাজালে কোনটি সঠিক?",["ভাষা আন্দোলন (১৯৫২) → গণ-অভ্যুত্থান (১৯৬৯) → সেলিম-দেলোয়ারের শহিদ হওয়া (১৯৮৩) → ডা. মিলন ও জেহাদের শহিদ হওয়া (১৯৯০)","গণ-অভ্যুত্থান (১৯৬৯) → ভাষা আন্দোলন (১৯৫২) → ডা. মিলন ও জেহাদ (১৯৯০) → সেলিম-দেলোয়ার (১৯৮৩)","সেলিম-দেলোয়ার (১৯৮৩) → ভাষা আন্দোলন (১৯৫২) → গণ-অভ্যুত্থান (১৯৬৯) → ডা. মিলন ও জেহাদ (১৯৯০)","ভাষা আন্দোলন (১৯৫২) → ডা. মিলন ও জেহাদ (১৯৯০) → গণ-অভ্যুত্থান (১৯৬৯) → সেলিম-দেলোয়ার (১৯৮৩)"],"১৯৫২ → ১৯৬৯ → ১৯৮৩ → ১৯৯০—এটিই সঠিক কালক্রম।"],
+["bn","গদ্য · স্মরণীয় যাঁরা বরণীয় যাঁরা","নিচের কোন জোড়াটি পাঠ অনুযায়ী সঠিকভাবে মিলেছে?",["রণদাপ্রসাদ সাহা – দানশীলতার জন্য ‘দানবীর’","যোগেশচন্দ্র ঘোষ – দর্শনের শিক্ষক","জ্যোতির্ময় গুহঠাকুরতা – বিজ্ঞানের শিক্ষক","গোবিন্দচন্দ্র দেব – ইংরেজি সাহিত্যের শিক্ষক"],"যোগেশচন্দ্র ঘোষ সাধনা ঔষধালয়ের প্রতিষ্ঠাতা; জ্যোতির্ময় ইংরেজি সাহিত্যের, গোবিন্দচন্দ্র দর্শনের এবং মুনিরুজ্জামান বিজ্ঞানের শিক্ষক ছিলেন।"],
+["bn","গদ্য · কুপোকাত","খরগোশ কোন কৌশলে বাঘকে কুয়ার কাছে নিয়ে গিয়ে বোকা বানায়?",["বলে যে আরেকটি বাঘ তার আপাকে খেয়ে ফেলেছে এবং কুয়ায় বাঘের ছায়া দেখিয়ে অন্য বাঘ বলে চালিয়ে দেয়","বাঘকে ভয় দেখিয়ে তাড়িয়ে দেয়","শেয়ালের সাহায্যে বাঘকে বন্দি করে","বাঘকে গাজর খাওয়ার লোভ দেখায়"],"খরগোশ ‘আরেকটি আরো রাগী বাঘ’-এর গল্প বলে কুয়ার ভেতরে বাঘকে তার নিজের ছায়া দেখিয়ে দেয়।"],
+["bn","গদ্য · কুপোকাত","ময়ূর বলল, তাকে বাঘের কাছে পাঠালে ‘সকলের বিপদ বাড়বে বই কমবে না’—কেন?",["বেশি সুন্দর বলে সবাই তাকে খেতে চায় না; বাঘও তা পছন্দ না-ও করতে পারে","ময়ূর খুব শক্তিশালী বলে","ময়ূর উড়ে পালাতে পারে বলে","ময়ূরের মাংস বিষাক্ত বলে"],"ময়ূর লক্ষ করেছে, তাকে সামনে পেলে সবাই খাওয়ার কথা ভুলে মুগ্ধ হয়; বাঘও তাতে নারাজ হতে পারে।"],
+
+/* ===== বাংলা পদ্য ৮ ===== */
+["bn","পদ্য · পাখির মতো","‘পাখির মতো’ কবিতায় কবির মন পড়ায় না বসার আসল কারণ কোনটি?",["প্রকৃতির টান—কাঁঠালচাঁপার গন্ধ, নদী আর পাখির মতো উড়ে বেড়ানোর ইচ্ছা","পড়া খুব কঠিন বলে","আম্মা-আব্বা বকেন বলে","তাঁর খুব ঘুম পায় বলে"],"কবির মন কাঁঠালচাঁপার গন্ধ, নদীর কাছে থাকা আর পাখির মতো ডাকার ইচ্ছায় ভরে আছে।"],
+["bn","পদ্য · পাখির মতো","‘আমি না হয় পাখিই হব, পাখির মতো বন্য’—কবি নিজেকে ‘বন্য’ বলতে কী বুঝিয়েছেন?",["পাখির মতো মুক্ত ও বাঁধনহীনভাবে ঘুরে বেড়াতে চান","হিংস্র হতে চান","জঙ্গলে থাকতে চান","লেখাপড়া শিখতে চান না, শুধু ঝগড়া করতে চান"],"‘বন্য’ অর্থ বুনো; এখানে স্বাধীন, বাঁধনহীন জীবনের কথা বোঝানো হয়েছে।"],
+["bn","পদ্য · সংকল্প","‘রইব না কো বদ্ধ খাঁচায়’—এ থেকে কবির কোন মনোভাব প্রকাশ পায়?",["সীমার বাঁধন ছিঁড়ে পুরো পৃথিবী ঘুরে দেখার প্রবল ইচ্ছা","খাঁচায় পাখি পোষার ইচ্ছা","ঘরে নিরাপদে থাকার ইচ্ছা","পাখিদের প্রতি ভয়"],"‘বদ্ধ খাঁচা’ বলতে সীমাবদ্ধ জীবন বোঝানো হয়েছে; কবি সবকিছু ঘুরে দেখতে চান।"],
+["bn","পদ্য · সংকল্প","‘সংকল্প’ কবিতায় উল্লিখিত সাহসী কাজের উদাহরণ নয় কোনটি?",["পাহাড়ের গুহায় লুকিয়ে থাকা","ডুবুরির সিন্ধু সেঁচে মুক্তা আনা","দুঃসাহসীর আকাশে উড়ে চলা","যুদ্ধ-জাহাজের ঢেউয়ের ঝুঁটি জাপটে ছুটে চলা"],"কবিতায় ডুবুরি, আকাশচারী ও যুদ্ধ-জাহাজের সাহসের কথা আছে; লুকিয়ে থাকার কথা নেই।"],
+["bn","পদ্য · সংকল্প","‘পাতাল ফেড়ে নামব নিচে, উঠব আবার আকাশ ফুঁড়ে’—চরণটিতে কবির কোন ইচ্ছা প্রকাশ পেয়েছে?",["পাতাল থেকে আকাশ—সবখানে পৌঁছে যাওয়ার দুর্দমনীয় ইচ্ছা","মাটির নিচে বাস করার ইচ্ছা","আকাশে ঘর বানানোর ইচ্ছা","ভূমিকম্প ঘটানোর ইচ্ছা"],"‘ফেড়ে’ ও ‘ফুঁড়ে’ দুটিই ভেদ করার কথা বলে; এতে কবির সবকিছু জয় করার ইচ্ছা ফুটে উঠেছে।"],
+["bn","পদ্য · ইছামতী","‘ইছামতী’ কবিতায় নদীর দুই ধারের পার্থক্য কোনটি?",["একধারে মাঠ-ঘাটের সবুজ রং, অন্যধারে বালুর চরে ধু ধু রোদ","একধারে পাহাড়, অন্যধারে সমুদ্র","একধারে শহর, অন্যধারে বন","একধারে বন্যা, অন্যধারে খরা"],"‘একধারেতে মাঠে ঘাটে সবুজ বরন শুধু, আর একধারে বালুর চরে রৌদ্র করে ধু ধু।’"],
+["bn","পদ্য · ইছামতী","ইছামতী নদী হলে কবি দুই পারের মানুষের সাথে কীভাবে কথা বলতেন?",["আধেক কথা দিনের বেলায়, আধেক কথা রাতে","সব কথা শুধু দিনে","সব কথা শুধু রাতে","কথা না বলে গান গাইতেন"],"‘আমি কইব মনের কথা দুই পারেরই সাথে, আধেক কথা দিনের বেলায়, আধেক কথা রাতে।’"],
+["bn","পদ্য · শিক্ষাগুরুর মর্যাদা","বাদশাহর ডাকে ভয় পেলেও শিক্ষক শেষে সাহস পান কেন?",["তিনি জানতেন প্রাণের চেয়েও মান বড়ো এবং শাস্ত্রজ্ঞানে তিনি শ্রেষ্ঠ","তাঁর সঙ্গে সৈন্য ছিল","তিনি বাদশাহর বন্ধু ছিলেন","তাঁর অনেক ধন-সম্পদ ছিল"],"শিক্ষক ভাবলেন—‘প্রাণের চেয়েও মান বড়ো’ এবং শাস্ত্রের কথা তিনি অনর্গল শোনাতে পারেন।"],
+
+/* ===== বাংলা ব্যাকরণ ৯ ===== */
+["bn","ব্যাকরণ · পদ নির্ণয়","নিচের কোন বাক্যে ‘ভালো’ শব্দটি বিশেষ্য পদ হিসেবে ব্যবহৃত হয়েছে?",["ভালোর জয় সবসময় হয়।","ভালো ছেলেরা সত্য কথা বলে।","সে ভালো গান গায়।","মন দিয়ে ভালো করে পড়ো।"],"প্রথম বাক্যে ‘ভালো’ নিজেই বাক্যের কর্তা (ভালো কাজ/মানুষ বোঝাচ্ছে), তাই বিশেষ্য।"],
+["bn","ব্যাকরণ · পদ নির্ণয়","নিচের কোন বাক্যে একটিও সর্বনাম নেই?",["রহিম বই পড়ছে।","সে স্কুলে যায়।","আমরা খেলছি।","তোমরা কোথায় যাচ্ছ?"],"‘সে’, ‘আমরা’, ‘তোমরা’ সর্বনাম; প্রথম বাক্যে শুধু বিশেষ্য ও ক্রিয়া আছে।"],
+["bn","ব্যাকরণ · ক্রিয়ার কাজ","নিচের কোন বাক্যের ক্রিয়াপদ ভবিষ্যৎ কাল প্রকাশ করছে?",["সে কাল ঢাকায় যাবে।","সে গতকাল ঢাকায় গিয়েছিল।","সে এখন ঢাকায় যাচ্ছে।","সে প্রতিদিন ঢাকায় যায়।"],"‘যাবে’ ভবিষ্যতের কাজ বোঝায়।"],
+["bn","ব্যাকরণ · ক্রিয়ার কাজ","‘ভাবিতে ভাবিতে চিন্তার রেখা দেখা দিলো তাঁর ভালে।’—এ চরণের সঠিক চলিত গদ্যরূপ কোনটি?",["ভাবতে ভাবতে তাঁর কপালে চিন্তার রেখা দেখা দিল।","ভাবিয়া ভাবিয়া তাঁর কপালে চিন্তা দেখা গেল।","ভাবছে ভাবছে তাঁর ভালে চিন্তা এল।","ভাবিতে ভাবিতে তাঁর কপালে রেখা পড়ল।"],"‘ভাবিতে’ = ভাবতে, ‘ভালে’ = কপালে, ‘দিলো’ = দিল।"],
+["bn","ব্যাকরণ · যুক্তবর্ণ বিভাজন","কোন শব্দের যুক্তবর্ণ ভাঙলে ‘ষ + ঠ’ পাওয়া যায়?",["শ্রেষ্ঠ","সৃষ্টি","পুষ্প","ধন্য"],"শ্রেষ্ঠ-এর ‘ষ্ঠ’ = ষ + ঠ। সৃষ্টির ‘ষ্ট’ = ষ + ট এবং পুষ্পের ‘ষ্প’ = ষ + প।"],
+["bn","ব্যাকরণ · যুক্তবর্ণ বিভাজন","‘উজ্জ্বল’ শব্দটির যুক্তবর্ণ ভাঙলে কোনটি পাওয়া যায়?",["জ + জ + ব","জ + ব","জ + ঞ + ব","দ + জ + ব"],"‘জ্জ্ব’ = জ + জ + ব।"],
+["bn","ব্যাকরণ · সমার্থক শব্দ","নিচের কোনটি ‘পানি’ শব্দের সমার্থক নয়?",["অনল","বারি","জল","নীর"],"বারি, জল, নীর—সবই পানি; অনল অর্থ আগুন।"],
+["bn","ব্যাকরণ · সমার্থক শব্দ","নিচের কোন শব্দজোড়াটি সমার্থক?",["গুরু – শিক্ষক","পুত্র – কন্যা","দিন – রাত","আলো – আঁধার"],"পাঠের শব্দার্থ অনুযায়ী গুরু অর্থ শিক্ষক।"],
+["bn","ব্যাকরণ · বিপরীত শব্দ","নিচের কোন জোড়ায় শব্দ ও তার বিপরীত শব্দ সঠিকভাবে বসেছে?",["গণতন্ত্র – স্বৈরতন্ত্র","বৈষম্য – পার্থক্য","যুদ্ধ – সংগ্রাম","নির্মম – নিষ্ঠুর"],"বৈষম্য ও পার্থক্য সমার্থক, যুদ্ধ ও সংগ্রামও কাছাকাছি, নির্মম ও নিষ্ঠুরও সমার্থক; গণতন্ত্রের বিপরীত স্বৈরতন্ত্র।"],
+
+/* ===== English Text Book 10 ===== */
+["en","Text Book · Unit 15: The Secret Song","Which creature is correctly matched with what it saw in the poem?",["The spider – the petals drop from the rose","The fish – the fog come over the sea","The night owl – the moss creep over the stone","The gray fox – the sunset flash on a bird"],"The fish saw the sunset flash on a bird; the sea pigeon saw the fog; the gray fox saw the moss. Only the spider–petals match is correct."],
+["en","Text Book · Unit 15: The Secret Song","Why is the poem most probably called ‘The Secret Song’?",["Each creature quietly saw a beautiful thing that nobody else noticed","Because the poet sings it in secret","Because it is about a secret garden","Because the animals are hiding from the poet"],"In every stanza someone saw something beautiful, but ‘nobody knows’, ‘nobody heard’—it stays secret."],
+["en","Text Book · Unit 16: The Giving Tree","In which order did the boy ask the tree for things?",["Money → a house → a boat → a quiet place to rest","A house → money → a boat → a quiet place to rest","A boat → a house → money → a quiet place to rest","Money → a boat → a house → a quiet place to rest"],"First he wanted money, then a house, then a boat, and lastly a quiet place to rest."],
+["en","Text Book · Unit 16: The Giving Tree","The story says, “And the tree was happy, but not really.” When does this happen, and why?",["When the boy took her trunk to make a boat and sailed far away","When the boy gathered her leaves for crowns","When the boy slept in her shade","When the boy sat on the stump at the end"],"She gave her trunk and lost the boy to far-away places, so her happiness was not complete."],
+["en","Text Book · Unit 17: The Air We Share","Which statement is TRUE according to the article?",["Trees help clean the air by absorbing harmful gases","Air pollution has no effect on the ozone layer","Walking or riding bicycles increases the use of fossil fuels","Burning fossil fuels makes the air cleaner"],"“Trees absorb harmful gases and release oxygen.” The other statements are the opposite of the article."],
+["en","Text Book · Unit 17: The Air We Share","Which of the following is given as a main cause of air pollution?",["Burning fossil fuels in factories, power plants and cars","Planting too many trees","Riding bicycles for short distances","Breathing in and out"],"Factories, power plants and cars burn fuel to make energy, creating smoke and harmful gases."],
+["en","Text Book · Unit 18: Nakshi Kantha","Why was the Kantha ‘more than just a quilt’ for Adiba?",["It was a symbol of her grandmother’s love and the rich tradition of her homeland","It was very expensive","It was bought from a shop in New York","It was made by a machine"],"The passage says it was a symbol of her grandmother’s love and symbolised the rich tradition of her homeland."],
+["en","Text Book · Unit 18: Nakshi Kantha","Which word is correctly matched with its meaning?",["Wrap – to put cloth over something to cover it","Pattern – a warm blanket","Tradition – to sew pieces of cloth","Quilt – a design that repeats shapes"],"Stitch = to sew; Quilt = a warm blanket; Wrap = to cover; Pattern = a repeating design; Tradition = a long-lasting way of doing something."],
+["en","Text Book · Unit 19: The Wind and the Sun","Why did the wind fail to make the man remove his jacket?",["The harder the wind blew, the more tightly the man held and zipped his jacket","The man was too strong","The jacket was too heavy to remove","The wind was not cold enough"],"The man zipped his jacket higher each time the wind and storm grew stronger."],
+["en","Text Book · Unit 19: The Wind and the Sun","Which moral can be drawn from ‘The Wind and the Sun’?",["Gentleness and kindness work better than force","Force always wins","Winter jackets are useful","Boasting makes a person strong"],"The sun’s gentle warmth succeeded where the wind’s force failed."],
+
+/* ===== English Grammar 15 ===== */
+["en","Grammar · Parts of Speech","In which sentence is the word ‘fast’ used as an ADVERB?",["The cheetah runs fast.","He is a fast runner.","This is a fast car.","The fast train has arrived."],"In ‘runs fast’, the word tells how the cheetah runs, so it is an adverb. In the others it describes a noun."],
+["en","Grammar · Article","Choose the sentence with correct articles.",["He is an honest boy and a European tourist.","He is a honest boy and an European tourist.","He is an honest boy and an European tourist.","He is a honest boy and a European tourist."],"‘Honest’ starts with a vowel sound (silent h) → an. ‘European’ starts with a ‘yu’ sound → a."],
+["en","Grammar · Article","Rina is ______ tallest girl in ______ class.",["the, the","a, the","the, a","an, a"],"A superlative takes ‘the’, and a particular class also takes ‘the’."],
+["en","Grammar · Parts of Speech","The boy lost ______ pen, so I gave ______ mine.",["his, him","him, his","he, his","his, he"],"‘His’ is a possessive adjective before ‘pen’; ‘him’ is the object of ‘gave’."],
+["en","Grammar · Tense","She ______ her homework just now. (finish)",["finished","has finished","finishes","is finishing"],"‘Just now’ points to a definite moment in the past, so we use the Simple Past."],
+["en","Grammar · Tense","Choose the sentence in the Simple Past tense.",["They visited their grandmother last year.","They visit their grandmother every year.","They are visiting their grandmother.","They will visit their grandmother soon."],"‘Visited’ with ‘last year’ is the Simple Past."],
+["en","Grammar · Tense","Choose the correct sentence.",["Each of the boys has a book.","Each of the boys have a book.","Each of the boys are having a book.","Each of the boys were a book."],"‘Each’ is singular, so it takes ‘has’."],
+["en","Grammar · Tense","Rahim ______ (go) to school every day, but today he ______ at home.",["goes, is staying","went, stays","goes, stayed","is going, stay"],"A daily habit uses the Present Simple; ‘today’ with an action in progress uses the Present Continuous."],
+["en","Grammar · Preposition","The boy hid ______ the tree and waited ______ his friend.",["behind, for","at, to","on, at","in, with"],"We say ‘hid behind’ and ‘waited for’."],
+["en","Grammar · Preposition","She has been absent ______ Monday.",["since","for","from","by"],"‘Since’ is used with a starting point in time."],
+["en","Grammar · Preposition","He is good ______ mathematics but weak ______ English.",["at, in","in, at","on, to","of, for"],"We say ‘good at’ and ‘weak in’."],
+["en","Grammar · Preposition","He sat ______ the two girls.",["between","among","on","with"],"‘Between’ is used for two people or things."],
+["en","Grammar · Comparison of Adjectives","Choose the correct sentence.",["Of all the animals, the cheetah is the fastest.","Of all the animals, the cheetah is faster.","Of all the animals, the cheetah is more fast.","Of all the animals, the cheetah is most fast."],"Among three or more, we use ‘the + -est’ for a one-syllable adjective."],
+["en","Grammar · Comparison of Adjectives","Dhaka is ______ than Khulna. (crowded)",["more crowded","crowdeder","most crowded","more crowd"],"Adjectives with more than one syllable usually take ‘more’ for comparison of two."],
+["en","Grammar · Wh-questions","“______ did the boy sleep when he was tired?” — “In her shade.”",["Where","When","Who","Why"],"The answer ‘in her shade’ tells the place, so we ask with ‘Where’."],
+
+/* ===== গণিত ৩০ ===== */
+["math","গণিত · দশমিক ভগ্নাংশ","একটি ফিতার দৈর্ঘ্য ৫ মিটার। তা থেকে ১.২৫ মিটার ও ২.৭৫ মিটার কেটে নিলে বাকি ফিতার দৈর্ঘ্য কত?",["১ মিটার","১.২৫ মিটার","০.৫ মিটার","২ মিটার"],"১.২৫ + ২.৭৫ = ৪.০০; ৫ − ৪ = ১ মিটার।"],
+["math","গণিত · দশমিক ভগ্নাংশ","রাহুল ১২.৫০ টাকায় খাতা ও ৭.৭৫ টাকায় পেনসিল কিনল। সে ২৫ টাকা দিলে কত টাকা ফেরত পাবে?",["৪.৭৫ টাকা","৫.২৫ টাকা","৪.২৫ টাকা","৫.৭৫ টাকা"],"মোট = ১২.৫০ + ৭.৭৫ = ২০.২৫; ফেরত = ২৫ − ২০.২৫ = ৪.৭৫।"],
+["math","গণিত · দশমিক ভগ্নাংশ","ক = ০.৭, খ = ০.৭০, গ = ০.০৭, ঘ = ৭.০। কোন দুটি সংখ্যা সমান?",["ক ও খ","খ ও গ","গ ও ঘ","ক ও ঘ"],"০.৭ = ৭/১০ = ৭০/১০০ = ০.৭০; গ = ০.০৭ এবং ঘ = ৭।"],
+["math","গণিত · দশমিক ভগ্নাংশ","একটি সংখ্যার এককের ঘরে ৪, দশমাংশের ঘরে ৬ এবং শতাংশের ঘরে ৯ আছে। সংখ্যাটি কত?",["৪.৬৯","৪.৯৬","৬.৪৯","৯.৪৬"],"৪ + ০.৬ + ০.০৯ = ৪.৬৯।"],
+["math","গণিত · দশমিক ভগ্নাংশ","৬.২৯ সংখ্যাটিতে ২ ও ৯ এর স্থানীয় মানের যোগফল কত?",["০.২৯","২.৯","০.৯২","২৯"],"২ এর স্থানীয় মান ০.২ এবং ৯ এর ০.০৯; যোগফল ০.২৯।"],
+["math","গণিত · দশমিক ভগ্নাংশ","নিচের কোন জোড়ার যোগফল ঠিক ১০?",["৬.৫৫ ও ৩.৪৫","৫.৭৫ ও ৪.৩০","৭.২৫ ও ২.৬৫","৮.১২ ও ১.৯০"],"৬.৫৫ + ৩.৪৫ = ১০.০০; অন্যগুলো ১০.০৫, ৯.৯০ ও ১০.০২।"],
+["math","গণিত · শতকরা","একটি শ্রেণিতে ৪০ জনের মধ্যে ৩২ জন পাস করল। ফেল করার হার শতকরা কত?",["২০%","৮০%","৮%","২৫%"],"ফেল = ৮ জন; ৮/৪০ × ১০০ = ২০%।"],
+["math","গণিত · শতকরা","১২০০ টাকা বেতনের ২৫% সঞ্চয় করা হলো। সঞ্চয়ের ৪০% দান করলে দানের পরিমাণ কত?",["১২০ টাকা","৩০০ টাকা","৪৮০ টাকা","১৮০ টাকা"],"সঞ্চয় = ৩০০; ৩০০ এর ৪০% = ১২০।"],
+["math","গণিত · শতকরা","একটি সংখ্যার ১৫% এর সাথে ৩০ যোগ করলে ৭৫ হয়। সংখ্যাটি কত?",["৩০০","২৫০","৪৫০","১৫০"],"১৫% = ৭৫ − ৩০ = ৪৫; ১% = ৩; ১০০% = ৩০০।"],
+["math","গণিত · শতকরা","৪০ নম্বরের পরীক্ষায় ৩৪ পেলে শতকরা কত নম্বর পাওয়া হলো?",["৮৫%","৭৫%","৯০%","৮০%"],"৩৪/৪০ × ১০০ = ৮৫%।"],
+["math","গণিত · শতকরা","৬/২৫ কে শতকরায় প্রকাশ করলে কত হয়?",["২৪%","৬%","২৫%","১২%"],"৬/২৫ = ২৪/১০০ = ২৪%।"],
+["math","গণিত · গড়","পাঁচটি ক্রমিক সংখ্যার গড় ১৪ হলে সবচেয়ে বড়ো সংখ্যাটি কত?",["১৬","১৫","১৮","১৪"],"সংখ্যাগুলো ১২, ১৩, ১৪, ১৫, ১৬; গড় ১৪ এবং বড়ো সংখ্যা ১৬।"],
+["math","গণিত · গড়","প্রথম ৩ দিনের গড় বৃষ্টিপাত ৮ মিমি এবং পরের ২ দিনের গড় ৩ মিমি হলে ৫ দিনের গড় কত?",["৬ মিমি","৫.৫ মিমি","৫ মিমি","৭ মিমি"],"মোট = ২৪ + ৬ = ৩০; ৩০ ÷ ৫ = ৬।"],
+["math","গণিত · গড়","৯ জনের গড় ওজন ৪০ কেজি। আরেকজন যুক্ত হওয়ায় ১০ জনের গড় ৪২ কেজি হলো। নতুন জনের ওজন কত?",["৬০ কেজি","৪২ কেজি","৫০ কেজি","৪৮ কেজি"],"১০ জনের মোট = ৪২০; ৯ জনের মোট = ৩৬০; নতুন জন = ৬০।"],
+["math","গণিত · গড়","৬টি সংখ্যার গড় ২০। সবচেয়ে বড়ো সংখ্যা ৩০ বাদ দিলে বাকি ৫টির গড় কত?",["১৮","২০","১৯","২২"],"মোট = ১২০; ৩০ বাদে ৯০; ৯০ ÷ ৫ = ১৮।"],
+["math","গণিত · পরিমাপ","একটি ড্রামে ২ লিটার ৫০০ মিলিলিটার পানি আছে। প্রতিটি মগে ২৫০ মিলিলিটার ধরলে কতটি মগ ভরা যাবে?",["১০টি","৮টি","১২টি","১৫টি"],"২৫০০ ÷ ২৫০ = ১০।"],
+["math","গণিত · পরিমাপ","১ কেজি ২৫০ গ্রাম ওজনের ৪টি প্যাকেটের মোট ওজন কত কেজি?",["৫ কেজি","৪.২৫ কেজি","৪.৫ কেজি","৫.২৫ কেজি"],"১.২৫ × ৪ = ৫ কেজি।"],
+["math","গণিত · পরিমাপ","রিনা সকাল ৭টা ৪৫ মিনিটে বাসা থেকে বের হয়ে ৮টা ২০ মিনিটে স্কুলে পৌঁছাল। ফেরার সময়ও একই সময় লাগলে আসা-যাওয়ায় মোট কত মিনিট লাগে?",["৭০ মিনিট","৩৫ মিনিট","৬৫ মিনিট","৮০ মিনিট"],"এক দিকে ৩৫ মিনিট; আসা-যাওয়া = ৩৫ × ২ = ৭০।"],
+["math","গণিত · পরিমাপ","২.৫ কিলোমিটার পথ হাঁটতে প্রতি ১০০ মিটারে ১৫০ কদম লাগলে মোট কত কদম লাগবে?",["৩৭৫০ কদম","২৫০০ কদম","৩৭৫ কদম","৫০০০ কদম"],"২.৫ কিমি = ২৫০০ মিটার = ২৫টি ১০০ মিটার; ২৫ × ১৫০ = ৩৭৫০।"],
+["math","গণিত · পরিমাপ","২০২৪ সালে ফেব্রুয়ারি মাস ২৯ দিনের ছিল। ঐ বছরে মোট কত দিন?",["৩৬৬ দিন","৩৬৫ দিন","৩৬৭ দিন","৩৬৪ দিন"],"অধিবর্ষে ফেব্রুয়ারিতে ২৯ দিন থাকে; তাই বছরে ৩৬৬ দিন।"],
+["math","গণিত · পরিমাপ","একটি ঘরের দৈর্ঘ্য ৫ মিটার, প্রস্থ ৪ মিটার ও উচ্চতা ৩ মিটার। ঘরটির আয়তন কত?",["৬০ ঘনমিটার","১২ ঘনমিটার","৪৫ ঘনমিটার","২০ ঘনমিটার"],"আয়তন = ৫ × ৪ × ৩ = ৬০ ঘনমিটার।"],
+["math","গণিত · পরিমাপ","একটি ট্যাংকের আয়তন ১.৫ ঘনমিটার। ২৫০ লিটারের বালতি দিয়ে কতবার পানি ঢাললে ট্যাংকটি পূর্ণ হবে?",["৬ বার","৫ বার","৮ বার","১০ বার"],"১.৫ ঘনমিটার = ১৫০০ লিটার; ১৫০০ ÷ ২৫০ = ৬।"],
+["math","গণিত · জ্যামিতি","একটি ত্রিভুজের তিনটি কোণের অনুপাত ১ : ২ : ৩। বৃহত্তম কোণটি কত ডিগ্রি?",["৯০°","৬০°","১২০°","৭৫°"],"মোট ৬ ভাগ = ১৮০°; ১ ভাগ = ৩০°; বৃহত্তম = ৩ × ৩০° = ৯০°।"],
+["math","গণিত · জ্যামিতি","একটি আয়তাকার ঘনবস্তুর সব কিনারার সংখ্যা ও তলের সংখ্যার যোগফল কত?",["১৮","২০","১৪","২৬"],"১২টি কিনারা + ৬টি তল = ১৮।"],
+["math","গণিত · জ্যামিতি","ঘড়িতে ঠিক ৩টা বাজলে ঘণ্টা ও মিনিটের কাঁটার মধ্যে কোণ কত?",["৯০°","১২০°","৬০°","১৮০°"],"৩টায় মিনিটের কাঁটা ১২ এ ও ঘণ্টার কাঁটা ৩ এ; ৩ ঘর × ৩০° = ৯০°।"],
+["math","গণিত · জ্যামিতি","একটি আয়তক্ষেত্রের দৈর্ঘ্য প্রস্থের দ্বিগুণ। প্রস্থ ৫ সেমি হলে এর পরিসীমা কত?",["৩০ সেমি","২০ সেমি","২৫ সেমি","৫০ সেমি"],"দৈর্ঘ্য = ১০; পরিসীমা = ২ × (১০ + ৫) = ৩০ সেমি।"],
+["math","গণিত · জ্যামিতি","কোন ঘনবস্তুকে উপর থেকে দেখলে বৃত্ত এবং পাশ থেকে দেখলে আয়ত দেখা যায়?",["বেলনা","শঙ্কু","গোলক","ঘনক"],"বেলনা উপর থেকে বৃত্ত ও পাশ থেকে আয়ত; শঙ্কু পাশ থেকে ত্রিভুজ এবং গোলক সব দিক থেকে বৃত্ত।"],
+["math","গণিত · উপাত্ত বিন্যস্তকরণ","খেলা পছন্দের জরিপে ফুটবল ১২, ক্রিকেট ৯ ও হাডুডু ৪ জন বেছে নিল। ফুটবল পছন্দকারী মোট জনের শতকরা কত?",["৪৮%","১২%","৩৬%","৫০%"],"মোট ২৫ জন; ১২/২৫ × ১০০ = ৪৮%।"],
+["math","গণিত · উপাত্ত বিন্যস্তকরণ","৬, ৯, ৬, ৪, ৯, ৬ এই উপাত্তে ৬ ও ৯ এর পৌনঃপুনিকতার (কতবার এসেছে) পার্থক্য কত?",["১","২","৩","০"],"৬ এসেছে ৩ বার, ৯ এসেছে ২ বার; পার্থক্য ১।"],
+["math","গণিত · উপাত্ত বিন্যস্তকরণ","ছোটো থেকে বড়ো ক্রমে সাজানো ৫টি সংখ্যা: ১২, ১৫, ?, ২১, ২৫। গড় ১৮ হলে মাঝের সংখ্যাটি কত?",["১৭","১৬","১৮","২০"],"মোট = ৯০; ১২ + ১৫ + ২১ + ২৫ = ৭৩; মাঝের সংখ্যা = ১৭।"],
+
+/* ===== বিজ্ঞান ১৫ ===== */
+["sci","বিজ্ঞান · খাদ্য","নিচের কোন খাদ্য তালিকাটি সবচেয়ে সুষম?",["ভাত, ডাল, মাছ, শাকসবজি ও ফল","শুধু ভাত ও আলুভর্তা","শুধু রুটি ও চিনি","শুধু মাংস ও ঘি"],"সুষম খাদ্যে শর্করা, আমিষ, স্নেহ, ভিটামিন, খনিজ লবণ ও পানি পরিমিত থাকে; প্রথম তালিকায় সবগুলোর উৎস আছে।"],
+["sci","বিজ্ঞান · খাদ্য","খাদ্য উপাদান ও তার প্রধান কাজ—কোন জোড়াটি সঠিক?",["আমিষ – শরীর গঠন ও ক্ষয়পূরণ","শর্করা – রোগ প্রতিরোধ","ভিটামিন ও খনিজ – শক্তি জোগানো","পানি – হাড় গঠন"],"আমিষ শরীর গঠন ও ক্ষয়পূরণ করে; শর্করা শক্তি দেয়; ভিটামিন-খনিজ রোগ প্রতিরোধে সাহায্য করে।"],
+["sci","বিজ্ঞান · খাদ্য","সময়মতো খাদ্য গ্রহণের গুরুত্ব বোঝাতে পাঠে কীসের সাথে তুলনা করা হয়েছে?",["বিদ্যালয়ের নির্দিষ্ট সময়সূচির সাথে","খেলার মাঠের নিয়মের সাথে","ঘড়ির কাঁটার সাথে","ঋতুর পরিবর্তনের সাথে"],"পাঠে আছে—বিদ্যালয়ের যেমন নির্দিষ্ট সময়সূচি থাকে, তেমনি খাদ্য গ্রহণেরও নির্দিষ্ট সময় রয়েছে।"],
+["sci","বিজ্ঞান · খাদ্য","নিচের কোনটি খাদ্য সংরক্ষণের উপকারিতা নয়?",["খাদ্যের স্বাদ ও গুণ নষ্ট হয়","দ্রুত পচন রোধ হয়","খাদ্যের অপচয় কমে","খাদ্য দীর্ঘদিন ব্যবহার করা যায়"],"সংরক্ষণে খাদ্যের মান অক্ষুণ্ণ থাকে; তাই স্বাদ ও গুণ নষ্ট হওয়া উপকারিতা নয়।"],
+["sci","বিজ্ঞান · ভূমিরূপ","কোন ভূমিরূপটি পর্বতের চেয়ে নিচু, সমভূমির চেয়ে উঁচু এবং যার ওপরের অংশ প্রায় সমতল?",["মালভূমি","সমভূমি","পাহাড়","মহীসোপান"],"মালভূমি টেবিলের মতো দেখতে বলে একে টেবিলল্যান্ডও বলে।"],
+["sci","বিজ্ঞান · ভূমিরূপ","অতিবৃষ্টি, পাহাড়ি ঢল ও জলোচ্ছ্বাসে ভূমিরূপের পরিবর্তন কোন ধরনের কারণের উদাহরণ?",["পানি ও বায়ুপ্রবাহজনিত প্রাকৃতিক কারণ","মানবসৃষ্ট কারণ","শিল্পায়ন","বন ধ্বংস"],"এগুলো পানিজনিত প্রাকৃতিক ঘটনা; শিল্পায়ন ও বন ধ্বংস মানবসৃষ্ট।"],
+["sci","বিজ্ঞান · ভূমিরূপ","নিচের কোন কাজগুলো একসাথে ভূমিরূপ পরিবর্তনের মানবসৃষ্ট কারণ?",["বাঁধ নির্মাণ, বন ধ্বংস ও পাহাড় কাটা","ভূমিকম্প ও নদীভাঙন","আগ্নেয়গিরির অগ্ন্যুৎপাত ও বন্যা","বালুঝড় ও ঘূর্ণিঝড়"],"বাকি তিনটি সম্পূর্ণ প্রাকৃতিক কারণ।"],
+["sci","বিজ্ঞান · পৃথিবীর গতি","পৃথিবীর আহ্নিক গতি না থাকলে কী ঘটত?",["পৃথিবীর একদিক সবসময় আলোয় আর অন্যদিক সবসময় অন্ধকারে থাকত","সারা বছর একই ঋতু থাকত না","দিন ছোটো ও রাত বড়ো হয়ে যেত","চাঁদ হারিয়ে যেত"],"আহ্নিক গতির ফলেই দিন-রাত হয়; এটি না থাকলে একদিকে চিরদিন আলো ও অন্যদিকে চিরঅন্ধকার থাকত।"],
+["sci","বিজ্ঞান · পৃথিবীর গতি","দিন-রাত ও ঋতু পরিবর্তন—কোনটি কোন গতির ফল?",["দিন-রাত আহ্নিক গতির এবং ঋতু পরিবর্তন বার্ষিক গতির","দিন-রাত বার্ষিক গতির এবং ঋতু পরিবর্তন আহ্নিক গতির","দুটিই আহ্নিক গতির","দুটিই বার্ষিক গতির"],"আহ্নিক গতিতে দিন-রাত হয় এবং বার্ষিক গতিতে ঋতু পরিবর্তন হয়।"],
+["sci","বিজ্ঞান · পৃথিবীর গতি","পৃথিবীর কোন গতির একবার পূর্ণ আবর্তনে প্রায় ২৪ ঘণ্টা (এক দিন) সময় লাগে?",["আহ্নিক গতি","বার্ষিক গতি","মাসিক গতি","কোনোটিই নয়"],"নিজ অক্ষের ওপর একবার ঘুরতে প্রায় এক দিন লাগে।"],
+["sci","বিজ্ঞান · জলবায়ু পরিবর্তন","সমুদ্রের কাছের স্থানের আবহাওয়া সাধারণত মৃদু থাকে কেন?",["সমুদ্রের পানি ধীরে গরম ও ধীরে ঠান্ডা হয়","সমুদ্রে সবসময় বাতাস থাকে না","সমুদ্রে সূর্যের আলো পড়ে না","সমুদ্রের পানি লবণাক্ত বলে"],"পানি ধীরে গরম ও ঠান্ডা হওয়ায় আশপাশের আবহাওয়ায় খুব বেশি গরম বা ঠান্ডা অনুভূত হয় না।"],
+["sci","বিজ্ঞান · জলবায়ু পরিবর্তন","‘আজ ঢাকায় সারাদিন বৃষ্টি হয়েছে’ এবং ‘বাংলাদেশে বছরে বৃষ্টিপাত বেশি হয়’—বাক্য দুটি কী প্রকাশ করছে?",["প্রথমটি আবহাওয়া, দ্বিতীয়টি জলবায়ু","প্রথমটি জলবায়ু, দ্বিতীয়টি আবহাওয়া","দুটিই আবহাওয়া","দুটিই জলবায়ু"],"নির্দিষ্ট দিনের অবস্থা আবহাওয়া; বহু বছরের গড় অবস্থা জলবায়ু।"],
+["sci","বিজ্ঞান · জলবায়ু পরিবর্তন","কোন কাজগুলো গ্রিনহাউস প্রভাব বাড়িয়ে জলবায়ু পরিবর্তনে ভূমিকা রাখে?",["বনভূমি উজাড় ও খনিজ জ্বালানি ব্যবহার","বেশি করে গাছ লাগানো","সাইকেলে চলাচল","বৃষ্টির পানি সংরক্ষণ"],"গাছ কমলে বায়ুমণ্ডলে কার্বন ডাইঅক্সাইড বাড়ে, জ্বালানি পোড়ালেও গ্রিনহাউস গ্যাস বাড়ে।"],
+["sci","বিজ্ঞান · তথ্য ও যোগাযোগ প্রযুক্তি","বিজ্ঞান ও প্রযুক্তির সম্পর্ক সম্পর্কে কোন বক্তব্যটি সঠিক?",["বিজ্ঞানের জ্ঞান ব্যবহার করেই প্রযুক্তি উদ্ভাবিত হয়","প্রযুক্তির সাথে বিজ্ঞানের কোনো সম্পর্ক নেই","বিজ্ঞান প্রযুক্তি থেকে সম্পূর্ণ আলাদা","প্রযুক্তি থেকেই বিজ্ঞানের জন্ম"],"বৈজ্ঞানিক জ্ঞান ব্যবহার করেই সব প্রযুক্তি উদ্ভাবন করা হয়েছে।"],
+["sci","বিজ্ঞান · তথ্য ও যোগাযোগ প্রযুক্তি","ঘূর্ণিঝড় বা জলোচ্ছ্বাসের আগাম পূর্বাভাস দিতে আবহাওয়া বিজ্ঞানীরা কোন প্রযুক্তির সাহায্যে উপাত্ত সংগ্রহ করেন?",["রাডার স্টেশন","পেনসিল-কম্পাস","বাইসাইকেল","টর্চলাইট"],"পাঠে আছে—রাডার স্টেশনের মাধ্যমে বায়ুচাপ হ্রাস ধরা পড়ে এবং সে উপাত্ত বিশ্লেষণ করে জলোচ্ছ্বাসের পূর্বাভাস দেওয়া হয়।"],
+
+/* ===== মানসিক দক্ষতা ২৫ ===== */
+["mind","মানসিক দক্ষতা · সংখ্যা ধারা","২, ৫, ১০, ১৭, ২৬, ? — প্রশ্নবোধক স্থানে কোন সংখ্যা বসবে?",["৩৭","৩৬","৩৮","৩৫"],"ব্যবধান ৩, ৫, ৭, ৯ ক্রমে বাড়ছে; পরের ব্যবধান ১১; ২৬ + ১১ = ৩৭।"],
+["mind","মানসিক দক্ষতা · সংখ্যা ধারা","১, ২, ৪, ৭, ১১, ১৬, ? — প্রশ্নবোধক স্থানে কোন সংখ্যা বসবে?",["২২","২১","২৩","২০"],"ব্যবধান ১, ২, ৩, ৪, ৫; পরের ব্যবধান ৬; ১৬ + ৬ = ২২।"],
+["mind","মানসিক দক্ষতা · সংখ্যা ধারা","২, ৬, ১২, ২০, ৩০, ? — প্রশ্নবোধক স্থানে কোন সংখ্যা বসবে?",["৪২","৪০","৩৬","৪৪"],"সংখ্যাগুলো ১×২, ২×৩, ৩×৪, ৪×৫, ৫×৬; পরেরটি ৬×৭ = ৪২।"],
+["mind","মানসিক দক্ষতা · সংখ্যা ধারা","১২০, ৬০, ২০, ৫, ? — প্রশ্নবোধক স্থানে কোন সংখ্যা বসবে?",["১","০","২","১০"],"১২০ ÷ ২ = ৬০, ৬০ ÷ ৩ = ২০, ২০ ÷ ৪ = ৫, ৫ ÷ ৫ = ১।"],
+["mind","মানসিক দক্ষতা · বর্ণ ধারা","A, C, F, J, ? — প্রশ্নবোধক স্থানে কোন বর্ণ বসবে?",["O","N","P","M"],"বর্ণের ক্রম ১, ৩, ৬, ১০, ... ব্যবধান ২, ৩, ৪, তাই পরের ব্যবধান ৫; ১০ + ৫ = ১৫ নম্বর বর্ণ O।"],
+["mind","মানসিক দক্ষতা · সম্পর্ক","পানি : তৃষ্ণা :: খাদ্য : ?",["ক্ষুধা","রান্না","ফল","ঘুম"],"পানি তৃষ্ণা মেটায়, খাদ্য ক্ষুধা মেটায়।"],
+["mind","মানসিক দক্ষতা · সম্পর্ক","৩ : ২৭ :: ৪ : ?",["৬৪","১৬","৩৬","৪৮"],"৩³ = ২৭; তাই ৪³ = ৬৪।"],
+["mind","মানসিক দক্ষতা · বেমানান","বেমানান সংখ্যাটি কোনটি? ২, ৩, ৫, ৭, ৯, ১১",["৯","২","৩","১১"],"২, ৩, ৫, ৭, ১১ মৌলিক সংখ্যা; ৯ মৌলিক নয় (৩ × ৩)।"],
+["mind","মানসিক দক্ষতা · বেমানান","বেমানান কোনটি? বৃত্ত, ত্রিভুজ, বর্গ, গোলক",["গোলক","বৃত্ত","ত্রিভুজ","বর্গ"],"বৃত্ত, ত্রিভুজ, বর্গ সমতলীয় আকৃতি; গোলক ঘনবস্তু।"],
+["mind","মানসিক দক্ষতা · সংকেত","একটি সংকেতে বর্ণ ও ক্রমসংখ্যা অনুযায়ী CAT = ৩ ১ ২০ হলে DOG = কত?",["৪ ১৫ ৭","৪ ১৪ ৬","৩ ১৫ ৭","৪ ১৬ ৮"],"A = ১, B = ২, ... D = ৪, O = ১৫, G = ৭।"],
+["mind","মানসিক দক্ষতা · সংকেত","একটি সংকেতে ‘+’ এর অর্থ ‘×’, ‘×’ এর অর্থ ‘−’ এবং ‘−’ এর অর্থ ‘+’। তাহলে ৬ + ৪ × ৩ − ২ = কত?",["২৩","১৫","২৯","১৭"],"সংকেত বসালে ৬ × ৪ − ৩ + ২ = ২৪ − ৩ + ২ = ২৩।"],
+["mind","মানসিক দক্ষতা · দিক নির্ণয়","রাহুল পূর্ব দিকে ৫ কিমি হেঁটে ডানে ঘুরে ৩ কিমি গেল। আবার ডানে ঘুরে ৫ কিমি হাঁটল। শুরুর বিন্দু থেকে এখন সে কোথায়?",["৩ কিমি দক্ষিণে","৩ কিমি উত্তরে","৫ কিমি পশ্চিমে","৮ কিমি পূর্বে"],"পূর্বে ৫, ডানে (দক্ষিণে) ৩, আবার ডানে (পশ্চিমে) ৫—পূর্ব-পশ্চিম কেটে যায়; বাকি ৩ কিমি দক্ষিণে।"],
+["mind","মানসিক দক্ষতা · দিক নির্ণয়","সূর্যোদয়ের সময় সূর্যের দিকে মুখ করে দাঁড়ালে তোমার ছায়া কোন দিকে পড়বে?",["পশ্চিম দিকে","পূর্ব দিকে","উত্তর দিকে","দক্ষিণ দিকে"],"সূর্য পূর্বে ওঠে; সূর্যের বিপরীত দিকে (পশ্চিমে) ছায়া পড়ে।"],
+["mind","মানসিক দক্ষতা · সম্পর্ক নির্ণয়","রিনা একটি ছেলের দিকে ইঙ্গিত করে বলল, ‘ও আমার বাবার একমাত্র ছেলের ছেলে।’ ছেলেটি রিনার কী হয়?",["ভাইপো","ভাই","ভাগ্নে","ছেলে"],"রিনার বাবার একমাত্র ছেলে = রিনার ভাই; ভাইয়ের ছেলে = ভাইপো।"],
+["mind","মানসিক দক্ষতা · সম্পর্ক নির্ণয়","A হলো B এর ভাই, B হলো C এর বোন এবং C হলো D এর বাবা। A এর সাথে D এর সম্পর্ক কী?",["চাচা","বাবা","দাদা","ভাই"],"A, B ও C ভাইবোন; D, C এর সন্তান; তাই A হলো D এর বাবার ভাই—চাচা।"],
+["mind","মানসিক দক্ষতা · সারিবদ্ধ ক্রম","একটি সারিতে রিমা সামনে থেকে ৩য় এবং পেছন থেকে ৪র্থ। সারিতে মোট কতজন আছে?",["৬ জন","৭ জন","৫ জন","৮ জন"],"মোট = ৩ + ৪ − ১ = ৬ (রিমা দুবার গণনা হয়েছে)।"],
+["mind","মানসিক দক্ষতা · সারিবদ্ধ ক্রম","একটি সারিতে সামনে থেকে করিম ১২তম। তার পেছনে ১৮ জন আছে। সারিতে মোট কতজন?",["৩০ জন","২৯ জন","৩১ জন","২৮ জন"],"করিমসহ সামনে ১২ জন ও পেছনে ১৮ জন; ১২ + ১৮ = ৩০।"],
+["mind","মানসিক দক্ষতা · ঘড়ি","ঠিক ৪টা বাজলে ঘড়ির দুই কাঁটার মধ্যে ছোটো কোণ কত ডিগ্রি?",["১২০°","১৫০°","৯০°","১৮০°"],"৪টায় মিনিটের কাঁটা ১২ এ এবং ঘণ্টার কাঁটা ৪ এ; ৪ ঘর × ৩০° = ১২০°।"],
+["mind","মানসিক দক্ষতা · ক্যালেন্ডার","আজ বৃহস্পতিবার হলে ৫০ দিন পর কী বার হবে?",["শুক্রবার","শনিবার","বৃহস্পতিবার","বুধবার"],"৫০ ÷ ৭ = ভাগশেষ ১; বৃহস্পতিবারের এক দিন পর শুক্রবার।"],
+["mind","মানসিক দক্ষতা · বয়স","পিতার বয়স পুত্রের বয়সের ৫ গুণ। ৫ বছর পর তাদের বয়সের সমষ্টি ৭০ হলে পুত্রের বর্তমান বয়স কত?",["১০ বছর","১২ বছর","৮ বছর","১৫ বছর"],"পুত্র ক হলে পিতা ৫ক; ৫ বছর পর ৬ক + ১০ = ৭০; ক = ১০।"],
+["mind","মানসিক দক্ষতা · সংখ্যা ধাঁধা","দুটি সংখ্যার যোগফল ২০ এবং গুণফল ৯১। বড়ো সংখ্যাটি কত?",["১৩","১৪","১৫","১২"],"৭ + ১৩ = ২০ এবং ৭ × ১৩ = ৯১; বড়ো সংখ্যা ১৩।"],
+["mind","মানসিক দক্ষতা · গণনা","একটি ৩ × ৩ ছকে (৯টি ছোটো ঘর) সব আকারের বর্গ মিলিয়ে মোট কয়টি বর্গ আছে?",["১৪টি","৯টি","১০টি","১৬টি"],"১×১ আকারের ৯টি, ২×২ আকারের ৪টি, ৩×৩ আকারের ১টি; মোট ১৪টি।"],
+["mind","মানসিক দক্ষতা · সেট ও যুক্তি","একটি ক্লাসের ৩০ জনের ১৮ জন ফুটবল ও ১৫ জন ক্রিকেট পছন্দ করে। প্রত্যেকেই অন্তত একটি খেলা পছন্দ করে। কতজন দুটিই পছন্দ করে?",["৩ জন","১০ জন","৫ জন","৬ জন"],"১৮ + ১৫ = ৩৩; মোট ৩০ জন; ৩৩ − ৩০ = ৩ জন দুটিই পছন্দ করে।"],
+["mind","মানসিক দক্ষতা · কাজ ও সময়","একটি নল ৬ ঘণ্টায় এবং আরেকটি নল ৩ ঘণ্টায় একটি খালি ট্যাংক ভরতে পারে। দুটি নল একসাথে খুললে ট্যাংকটি কত ঘণ্টায় ভরবে?",["২ ঘণ্টায়","৪.৫ ঘণ্টায়","৩ ঘণ্টায়","১ ঘণ্টায়"],"১ ঘণ্টায় ১/৬ + ১/৩ = ১/২ অংশ ভরে; তাই পুরো ট্যাংক ২ ঘণ্টায় ভরবে।"],
+["mind","মানসিক দক্ষতা · যুক্তি","রহিম করিমের চেয়ে লম্বা এবং সুমি রহিমের চেয়ে লম্বা। তিনজনের মধ্যে সবচেয়ে ছোটো (খাটো) কে?",["করিম","রহিম","সুমি","বলা সম্ভব নয়"],"সুমি > রহিম > করিম; তাই করিম সবচেয়ে খাটো।"]
+];
+
+const SUBJECTS = [
+  {key:"all",  name:"সব বিষয়"},
+  {key:"bn",   name:"বাংলা"},
+  {key:"en",   name:"English"},
+  {key:"math", name:"গণিত"},
+  {key:"sci",  name:"বিজ্ঞান"},
+  {key:"mind", name:"মানসিক দক্ষতা"}
+];
+
+/* ---------- সহায়ক ফাংশন ---------- */
+const BN = "০১২৩৪৫৬৭৮৯";
+const bn = n => String(n).replace(/\d/g, d => BN[d]);
+const shuffle = a => { a = a.slice(); for (let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+const LABELS_BN = ["ক","খ","গ","ঘ"];
+const LABELS_EN = ["A","B","C","D"];
+
+/* ---------- অবস্থা ---------- */
+let QS = [];            // প্রশ্ন + এলোমেলো অপশন
+let answered = {};      // id -> বাছাই করা অপশনের index
+let current = "all";
+
+function buildQuestions(){
+  QS = RAW.map((r,i) => ({
+    id:i, s:r[0], c:r[1], q:r[2], correct:r[3][0], opts:shuffle(r[3]), e:r[4]
+  }));
+}
+
+function list(){ return QS.filter(q => current==="all" || q.s===current); }
+
+/* ---------- রেন্ডার ---------- */
+function renderTabs(){
+  const el = document.getElementById("tabs");
+  el.innerHTML = "";
+  SUBJECTS.forEach(s => {
+    const n = QS.filter(q => s.key==="all" || q.s===s.key).length;
+    const b = document.createElement("button");
+    b.className = "tab" + (s.key===current ? " active" : "");
+    b.textContent = s.name + " (" + bn(n) + ")";
+    b.onclick = () => { current = s.key; render(); window.scrollTo({top:0}); };
+    el.appendChild(b);
+  });
+}
+
+function renderList(){
+  const box = document.getElementById("list");
+  box.innerHTML = "";
+  list().forEach((q, idx) => {
+    const labs = q.s==="en" ? LABELS_EN : LABELS_BN;
+    const card = document.createElement("div");
+    card.className = "q";
+    card.id = "q"+q.id;
+
+    const meta = document.createElement("div");
+    meta.className = "meta"; meta.textContent = q.c;
+    const t = document.createElement("div");
+    t.className = "text";
+    const n = document.createElement("span"); n.className="n"; n.textContent = bn(idx+1)+".";
+    t.appendChild(n); t.appendChild(document.createTextNode(" "+q.q));
+    card.appendChild(meta); card.appendChild(t);
+
+    q.opts.forEach((o, oi) => {
+      const b = document.createElement("button");
+      b.className = "opt"; b.type = "button";
+      b.innerHTML = '<span class="lab">'+labs[oi]+'</span><span class="otx"></span>';
+      b.querySelector(".otx").textContent = o;
+      b.onclick = () => choose(q.id, oi);
+      card.appendChild(b);
+    });
+
+    const fb = document.createElement("div");
+    fb.className = "fb"; fb.id = "fb"+q.id;
+    card.appendChild(fb);
+    box.appendChild(card);
+
+    if (answered[q.id] !== undefined) paint(q, answered[q.id]);
+  });
+}
+
+function paint(q, chosen){
+  const card = document.getElementById("q"+q.id);
+  const btns = card.querySelectorAll(".opt");
+  const fb = document.getElementById("fb"+q.id);
+  btns.forEach((b,i) => {
+    b.disabled = true;
+    if (q.opts[i] === q.correct) b.classList.add("correct");
+    else if (i === chosen) b.classList.add("wrong");
+  });
+  const ok = q.opts[chosen] === q.correct;
+  fb.className = "fb show " + (ok ? "good" : "err");
+  fb.innerHTML = "";
+  const head = document.createElement("b");
+  head.textContent = ok ? "✔ সঠিক উত্তর!" : "✘ ভুল হয়েছে। সঠিক উত্তর: " + q.correct;
+  fb.appendChild(head);
+  if (q.e){ const ex = document.createElement("span"); ex.className="ex"; ex.textContent = q.e; fb.appendChild(ex); }
+}
+
+function choose(id, oi){
+  if (answered[id] !== undefined) return;
+  answered[id] = oi;
+  paint(QS[id], oi);
+  stats();
+}
+
+function stats(){
+  const L = list();
+  let a=0, ok=0;
+  L.forEach(q => { if (answered[q.id] !== undefined){ a++; if (q.opts[answered[q.id]]===q.correct) ok++; } });
+  document.getElementById("sAns").textContent = bn(a);
+  document.getElementById("sTot").textContent = bn(L.length);
+  document.getElementById("sOk").textContent = bn(ok);
+  document.getElementById("sBad").textContent = bn(a-ok);
+  document.getElementById("prog").style.width = (L.length ? a/L.length*100 : 0) + "%";
+
+  const r = document.getElementById("result");
+  if (L.length && a===L.length){
+    const pct = Math.round(ok/L.length*100);
+    document.getElementById("rScore").textContent = bn(ok)+" / "+bn(L.length)+"  ("+bn(pct)+"%)";
+    document.getElementById("rMsg").textContent =
+      pct>=90 ? "অসাধারণ! চমৎকার প্রস্তুতি।" :
+      pct>=75 ? "খুব ভালো! আরেকটু অনুশীলন করলেই পারফেক্ট।" :
+      pct>=50 ? "ভালো চেষ্টা! ভুলগুলো আবার দেখে নাও।" :
+                "হতাশ হয়ো না—বইয়ের অধ্যায়গুলো আবার পড়ে চেষ্টা করো।";
+    r.classList.add("show");
+  } else r.classList.remove("show");
+}
+
+function render(){ renderTabs(); renderList(); stats(); }
+
+function resetCurrent(){
+  list().forEach(q => { delete answered[q.id]; });
+  // শুধু এই অংশের অপশন নতুন করে এলোমেলো করা
+  list().forEach(q => { q.opts = shuffle(q.opts); });
+  render();
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+document.getElementById("btnReset").onclick = resetCurrent;
+document.getElementById("btnRetry").onclick = resetCurrent;
+document.getElementById("btnTop").onclick = () => window.scrollTo({top:0, behavior:"smooth"});
+
+buildQuestions();
+render();
+</script>
+</body>
+</html>
